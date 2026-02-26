@@ -1,0 +1,33 @@
+---
+import { profile } from '@data/profile';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="py-8 bg-slate-900 text-slate-400">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm">
+      &copy; {year} {profile.name}. All rights reserved.
+    </p>
+    <p class="text-sm flex items-center gap-1.5">
+      Built with
+      <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+      >
+        Astro
+      </a>
+      &amp;
+      <a
+        href="https://tailwindcss.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+      >
+        Tailwind
+      </a>
+    </p>
+  </div>
+</footer>

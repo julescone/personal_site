@@ -1,0 +1,53 @@
+---
+import { profile } from '@data/profile';
+
+const paragraphs = profile.about.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
+---
+
+<section id="about" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <div data-reveal class="accent-line mx-auto"></div>
+      <h2 data-reveal data-reveal-delay="1" class="section-heading">About Me</h2>
+      <p data-reveal data-reveal-delay="2" class="section-subheading">A bit about who I am</p>
+
+      <div
+        data-reveal
+        data-reveal-delay="3"
+        class="space-y-4 text-left text-slate-600 leading-relaxed text-lg"
+      >
+        {paragraphs.map(p => <p>{p}</p>)}
+      </div>
+
+      <!-- Quick stats / highlights row -->
+      <div
+        data-reveal
+        data-reveal-delay="4"
+        class="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-6"
+      >
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl font-extrabold text-accent-600">
+            {profile.experience.length}+
+          </p>
+          <p class="text-sm text-slate-500 mt-1 font-medium">Roles held</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl font-extrabold text-accent-600">
+            {profile.skills.reduce((sum, g) => sum + g.items.length, 0)}+
+          </p>
+          <p class="text-sm text-slate-500 mt-1 font-medium">Skills</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 col-span-2 sm:col-span-1">
+          <p class="text-3xl font-extrabold text-accent-600">
+            {profile.education.length}
+          </p>
+          <p class="text-sm text-slate-500 mt-1 font-medium">
+            {profile.education.length === 1 ? 'Degree' : 'Degrees'}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

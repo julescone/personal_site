@@ -1,0 +1,34 @@
+---
+import { profile } from '@data/profile';
+---
+
+<section id="skills" class="py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div data-reveal class="accent-line mx-auto"></div>
+      <h2 data-reveal data-reveal-delay="1" class="section-heading">Skills</h2>
+      <p data-reveal data-reveal-delay="2" class="section-subheading">What I bring to the table</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {profile.skills.map((group, i) => (
+        <div
+          data-reveal
+          data-reveal-delay={String(Math.min(i + 1, 4))}
+          class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 hover:shadow-md transition-shadow"
+        >
+          <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+            {group.category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {group.items.map((skill) => (
+              <span class="px-3 py-1.5 rounded-lg bg-accent-50 text-accent-700 text-sm font-medium border border-accent-100 hover:bg-accent-100 transition-colors cursor-default">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
