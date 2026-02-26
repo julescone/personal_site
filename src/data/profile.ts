@@ -36,6 +36,7 @@ export interface Certification {
 
 export interface Patent {
   name: string;
+  url?: string;
   description?: string;
 }
 
@@ -282,7 +283,7 @@ See the individual job entries in my profile below for more detail about the rol
     },
     {
       category: "GIS & Data",
-      items: ["Arc/Info", "GIS Analysis", "Cartography", "Spatial Data"],
+      items: ["Arc/Info", "MapInfo", "GIS Analysis", "Cartography", "Spatial Data"],
     },
   ],
 
@@ -296,6 +297,7 @@ See the individual job entries in my profile below for more detail about the rol
   patents: [
     {
       name: "Personal contact network",
+      url: "https://patents.google.com/patent/US7904511",
     },
   ],
 };

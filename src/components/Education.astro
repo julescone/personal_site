@@ -6,13 +6,13 @@ import { profile } from '@data/profile';
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <div data-reveal class="accent-line mx-auto"></div>
-      <h2 data-reveal data-reveal-delay="1" class="section-heading">Education &amp; Credentials</h2>
+      <h2 data-reveal data-reveal-delay="1" class="section-heading">Education &amp; Certifications</h2>
     </div>
 
     <!-- Education -->
     <div data-reveal class="mb-12">
       <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-5">Education</h3>
-      <div class="grid gap-6 w-3/4">
+      <div class="grid gap-6 w-full">
         {profile.education.map((edu, i) => (
           <div
             data-reveal
@@ -78,7 +78,19 @@ import { profile } from '@data/profile';
                 </svg>
               </div>
               <div>
-                <p class="font-semibold text-slate-900 text-sm">{patent.name}</p>
+                {patent.url ? (
+                  <a
+                    href={patent.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Click to view Patent"
+                    class="font-semibold text-sm text-accent-600 hover:text-accent-700 hover:underline"
+                  >
+                    {patent.name}
+                  </a>
+                ) : (
+                  <p class="font-semibold text-slate-900 text-sm">{patent.name}</p>
+                )}
                 {patent.description && (
                   <p class="text-slate-500 text-xs mt-0.5 leading-relaxed">{patent.description}</p>
                 )}
