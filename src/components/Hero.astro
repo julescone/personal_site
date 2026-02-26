@@ -21,23 +21,15 @@ import { profile } from '@data/profile';
 
       <!-- Avatar -->
       <div data-reveal class="shrink-0">
-        <div
-          class="w-40 h-40 rounded-full bg-gradient-to-br from-accent-500 to-indigo-700 flex items-center justify-center text-5xl font-bold text-white shadow-2xl ring-4 ring-white"
-        >
-          {profile.initials}
-        </div>
+        <img
+          src="/mugshot.png"
+          alt={profile.name}
+          class="w-40 h-40 rounded-full object-cover shadow-2xl ring-4 ring-white border-2 border-black"
+        />
       </div>
 
       <!-- Text -->
       <div class="text-center lg:text-left">
-        <p
-          data-reveal
-          data-reveal-delay="1"
-          class="text-accent-600 font-semibold tracking-wide uppercase text-sm mb-3"
-        >
-          Hello, I'm
-        </p>
-
         <h1
           data-reveal
           data-reveal-delay="2"

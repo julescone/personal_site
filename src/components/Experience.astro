@@ -12,29 +12,13 @@ import { profile } from '@data/profile';
 
     <!-- Timeline -->
     <div class="relative">
-      <!-- Vertical line (desktop) -->
-      <div
-        aria-hidden="true"
-        class="hidden md:block absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-accent-300 via-accent-200 to-transparent"
-      ></div>
-
-      <div class="flex flex-col gap-10">
+<div class="flex flex-col gap-10">
         {profile.experience.map((job, i) => (
           <article
             data-reveal
             data-reveal-delay={String(Math.min(i + 1, 4))}
-            class="relative md:pl-20"
+            class="relative md:pl-6"
           >
-            <!-- Timeline dot -->
-            <div
-              aria-hidden="true"
-              class="hidden md:flex absolute left-0 top-6 w-12 h-12 rounded-full bg-white border-2 border-accent-400 items-center justify-center shadow-sm shrink-0"
-            >
-              <span class="text-accent-600 font-bold text-sm">
-                {job.company.charAt(0).toUpperCase()}
-              </span>
-            </div>
-
             <!-- Card -->
             <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8 hover:shadow-md transition-shadow">
               <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
