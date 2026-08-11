@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  site: 'https://www.juliancone.com',
   integrations: [tailwind()],
   vite: {
     plugins: [
