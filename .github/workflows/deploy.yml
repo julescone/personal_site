@@ -36,3 +36,5 @@ jobs:
           # e.g. public_html or /home/uXXXXX/domains/juliancone.com/public_html
           remote_path: ${{ secrets.FTP_REMOTE_PATH }}
           sftp_only: true
+          # Force IPv4 — Hostinger AAAA records often cause "Network unreachable" on Actions
+          sftpArgs: "-o AddressFamily=inet -o StrictHostKeyChecking=no"
