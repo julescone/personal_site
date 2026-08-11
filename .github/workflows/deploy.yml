@@ -24,14 +24,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./dist/
-          # Hostinger: usually public_html/ from the FTP home.
-          # If login already lands inside public_html, use ./ instead.
-          server-dir: public_html/
+          # Hostinger shared hosting is often 65002; VPS is usually 22
+          port: ${{ secrets.FTP_PORT }}
+          local_path: ./dist/*
+          # e.g. public_html or /home/uXXXXX/domains/juliancone.com/public_html
+          remote_path: ${{ secrets.FTP_REMOTE_PATH }}
+          sftp_only: true
