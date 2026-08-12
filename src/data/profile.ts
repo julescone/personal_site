@@ -49,6 +49,8 @@ export interface Profile {
   linkedin: string;
   github?: string;
   twitter?: string;
+  /** Short bio shown in the Bio section near the top of the page */
+  bio: string;
   about: string;
   experience: ExperienceItem[];
   education: EducationItem[];
@@ -65,6 +67,8 @@ export const profile: Profile = {
   email: "julian@planetnz.com",
   linkedin: "https://linkedin.com/in/juliancone",
   github: "",
+
+  bio: `Product leader and builder with 30+ years across product management, software development, DevOps, engineering, GIS, and AI — especially in web and cloud B2B/B2C SaaS. Based in Christchurch, New Zealand, I thrive on collaborative problem-solving, mentoring, and applying AI to real product and engineering work.`,
 
   about: `Over 30 years experience in Product Management, Software development, DevOps, Engineering and GIS, particularly in the web and cloud B2B and B2C SAAS spaces.
 

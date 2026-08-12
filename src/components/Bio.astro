@@ -1,0 +1,20 @@
+---
+import { profile } from '@data/profile';
+---
+
+<section id="bio" class="py-20 bg-slate-50 border-y border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <div data-reveal class="accent-line mx-auto"></div>
+      <h2 data-reveal data-reveal-delay="1" class="section-heading mb-8">Bio</h2>
+
+      <p
+        data-reveal
+        data-reveal-delay="2"
+        class="text-lg sm:text-xl text-slate-600 leading-relaxed"
+      >
+        {profile.bio}
+      </p>
+    </div>
+  </div>
+</section>
