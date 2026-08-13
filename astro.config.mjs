@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { VitePWA } from 'vite-plugin-pwa';
+import { profileEditorApi } from './profile-editor-api.mjs';
 
 export default defineConfig({
   site: 'https://www.juliancone.com',
   integrations: [tailwind()],
   vite: {
     plugins: [
+      profileEditorApi(),
       VitePWA({
         registerType: 'autoUpdate',
         includeAssets: ['favicon.svg', 'icon.svg'],

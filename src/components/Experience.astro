@@ -22,9 +22,20 @@ import { profile } from '@data/profile';
             <!-- Card -->
             <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8 hover:shadow-md transition-shadow">
               <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900">{job.role}</h3>
-                  <p class="text-accent-600 font-semibold mt-0.5">{job.company}</p>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-3">
+                    <div class="min-w-0">
+                      <h3 class="text-xl font-bold text-slate-900 leading-tight">{job.role}</h3>
+                      <p class="text-accent-600 font-semibold mt-0.5 leading-tight">{job.company}</p>
+                    </div>
+                    {job.logo && (
+                      <img
+                        src={job.logo}
+                        alt={`${job.company} logo`}
+                        class="h-[2.875rem] w-auto object-contain shrink-0"
+                      />
+                    )}
+                  </div>
                   {job.location && (
                     <p class="text-slate-500 text-sm mt-1 flex items-center gap-1">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -35,7 +46,7 @@ import { profile } from '@data/profile';
                     </p>
                   )}
                 </div>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-xs font-semibold whitespace-nowrap shrink-0">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-xs font-semibold whitespace-nowrap shrink-0 self-start">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>

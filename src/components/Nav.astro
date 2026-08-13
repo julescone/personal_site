@@ -1,6 +1,8 @@
 ---
 import { profile } from '@data/profile';
 
+const isDev = import.meta.env.DEV;
+
 const links = [
   { label: 'Bio',        href: '#bio'        },
   { label: 'About',      href: '#about'      },
@@ -43,6 +45,16 @@ const links = [
           </li>
         ))
       }
+      {isDev && (
+        <li>
+          <a
+            href="/edit"
+            class="px-3 py-2 text-sm font-medium text-amber-700 bg-amber-50 rounded-md hover:bg-amber-100 transition-colors"
+          >
+            Edit
+          </a>
+        </li>
+      )}
     </ul>
 
     <!-- Mobile hamburger -->
@@ -95,6 +107,16 @@ const links = [
           </li>
         ))
       }
+      {isDev && (
+        <li>
+          <a
+            href="/edit"
+            class="block px-3 py-2.5 text-sm font-medium text-amber-700 bg-amber-50 rounded-md"
+          >
+            Edit profile
+          </a>
+        </li>
+      )}
     </ul>
   </div>
 </header>
